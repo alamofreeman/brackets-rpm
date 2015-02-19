@@ -1,6 +1,6 @@
 Name:           brackets
-Version:        1.0
-Release:        2%{?dist}
+Version:        1.1
+Release:        1%{?dist}
 Summary:        An open source code editor for the web, written in JavaScript, HTML and CSS.
 Group:          Development/Tools
 License:        MIT
@@ -31,12 +31,6 @@ AutoReqProv:    no
 
 %build
 
-%ifarch x86_64
-LD_PRELOAD=/usr/lib64/libudev.so.1
-%else
-LD_PRELOAD=/usr/lib/libudev.so.1
-%endif
-
 cd %{_builddir}/brackets
 npm install && npm install grunt-cli
 ./node_modules/.bin/grunt clean less targethtml useminPrepare htmlmin requirejs concat copy usemin
@@ -44,7 +38,16 @@ cp -a src/config.json dist/config.json
 
 cd %{_builddir}/brackets-shell
 npm install && npm install grunt-cli
-./node_modules/.bin/grunt setup full-build
+./node_modules/.bin/grunt setup
+
+%ifarch x86_64
+ln -sf /usr/lib64/libudev.so.1 %{_builddir}/libudev.so.0
+%else
+ln -sf /usr/lib/libudev.so.1 %{_builddir}/libudev.so.0
+%endif
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:%{_builddir}
+
+./node_modules/.bin/grunt full-build
 
 %install
 
