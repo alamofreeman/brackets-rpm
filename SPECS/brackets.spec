@@ -46,6 +46,7 @@ ln -sf /usr/lib64/libudev.so.1 %{_builddir}/libudev.so.0
 ln -sf /usr/lib/libudev.so.1 %{_builddir}/libudev.so.0
 %endif
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:%{_builddir}
+export LD_LIBRARY_PATH
 
 ./node_modules/.bin/grunt full-build
 
