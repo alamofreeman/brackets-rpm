@@ -1,5 +1,5 @@
 Name:           brackets
-Version:        1.1
+Version:        1.2
 Release:        1%{?dist}
 Summary:        An open source code editor for the web, written in JavaScript, HTML and CSS.
 Group:          Development/Tools
@@ -7,7 +7,7 @@ License:        MIT
 URL:            http://brackets.io/
 
 # The sources for this package were pulled from upstream's vcs.
-# Use the fetch_source.sh to download them.
+# Use `make pull` to download them.
 Source0:        brackets-shell-%{version}.tar.gz
 Source1:        brackets-%{version}.tar.gz
 
