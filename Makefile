@@ -11,7 +11,7 @@ pull:
 	git clone https://github.com/adobe/brackets-shell.git
 
 	cd brackets && git checkout $(BRANCH) && git submodule update --init && rm -rf .git && cd ..
-	cd brackets-shell && git checkout $(BRANCH) && git submodule update --init && rm -rf .git && cd ..
+	cd brackets-shell && git checkout linux-1547 && git submodule update --init && rm -rf .git && cd ..
 
 	tar -cvzf SOURCES/brackets-$(VERSION).tar.gz brackets
 	tar -cvzf SOURCES/brackets-shell-$(VERSION).tar.gz brackets-shell

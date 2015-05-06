@@ -1,6 +1,6 @@
 Name:           brackets
-Version:        1.2
-Release:        2%{?dist}
+Version:        1.3
+Release:        1%{?dist}
 Summary:        An open source code editor for the web, written in JavaScript, HTML and CSS.
 Group:          Development/Tools
 License:        MIT
