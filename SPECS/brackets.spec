@@ -15,6 +15,9 @@ Requires:       gtk2, alsa-lib, GConf2, libgcrypt
 BuildRequires:  %{requires}, gtk2-devel, npm, nspr, gyp, desktop-file-utils
 %{?fc21:Requires: compat-libgcrypt}
 %{?fc21:BuildRequires: compat-libgcrypt}
+%{?fc22:Requires: compat-libgcrypt}
+%{?fc22:BuildRequires: compat-libgcrypt}
+
 
 AutoReqProv:    no
 
